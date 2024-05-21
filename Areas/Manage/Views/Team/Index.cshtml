@@ -1,0 +1,29 @@
+﻿@model List<Teams>
+@{
+    int count = 0;
+}
+<div class="container">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nmae</th>
+      <th scope="col">Description</th>
+      <th scope="col">Imagee</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var item in Model)
+            {
+                count++;
+    <tr>
+          <th scope="row">@count</th>
+          <td>@item.Name</td>
+          <td>@item.Description</td>
+            <td><img src="~/Upload/@item.ImgUrl" /></td>
+        </tr>
+
+            }
+        </tbody>
+</table>
+</div>
